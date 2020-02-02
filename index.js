@@ -1,6 +1,8 @@
 "use strict";
 
 const Hapi = require("@hapi/hapi");
+const biscuits = require("./db/fresh-herb-buttermilk-biscuits.json");
+console.log("-----biscuits ", biscuits);
 
 const init = async () => {
   const server = Hapi.server({
@@ -12,7 +14,7 @@ const init = async () => {
     method: "GET",
     path: "/",
     handler: (request, h) => {
-      return "Hello World!";
+      return "Here's your biscuits: " + biscuits.name;
     }
   });
 
